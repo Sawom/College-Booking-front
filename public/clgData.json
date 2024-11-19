@@ -1,0 +1,188 @@
+[
+  {
+    "img":"https://i.ibb.co.com/5xx94Zx/img1.jpg",
+    "collegeName": "Greenfield Institute of Technology",
+    "admissionDate": "2024-06-15",
+    "ratings": 5,
+    "noOfResearch": 120,
+    "event": "Tech Innovation Fest 2024",
+    "researchHistory": [
+      {
+        "year": 2022,
+        "topic": "AI in Renewable Energy",
+        "outcome": "Published in International Journal of AI"
+      },
+      {
+        "year": 2023,
+        "topic": "Robotics in Agriculture",
+        "outcome": "Awarded Best Research Paper at TechCon"
+      }
+    ],
+    "sportsFacilities": ["Football", "Basketball", "Tennis", "Swimming"],
+    "admissionProcess": "Applicants must submit their high school transcripts, participate in a written exam, and attend an interview. International students must provide proof of English proficiency.",
+    "eventsDetails": "The Tech Innovation Fest includes workshops, hackathons, and keynote speeches from industry leaders.",
+    "researchWorks": [
+      "AI-driven smart grid management",
+      "Precision robotics in automated farming"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Football", "Track and Field"],
+      "indoor": ["Table Tennis", "Badminton"]
+    }
+  },
+  {
+    "img":"https://i.ibb.co.com/K6SYKqz/img2.jpg",
+    "collegeName": "Blue Ridge College of Arts and Sciences",
+    "admissionDate": "2024-08-01",
+    "ratings": 4,
+    "noOfResearch": 75,
+    "event": "Annual Arts Festival",
+    "researchHistory": [
+      {
+        "year": 2021,
+        "topic": "Impact of Modern Art on Society",
+        "outcome": "Featured in Art Review Magazine"
+      },
+      {
+        "year": 2023,
+        "topic": "Linguistic Shifts in the Digital Age",
+        "outcome": "Presented at the National Language Symposium"
+      }
+    ],
+    "sportsFacilities": ["Soccer", "Volleyball", "Gymnastics"],
+    "admissionProcess": "Submit an application form, include an art portfolio or writing sample, and attend an interview. Merit scholarships are available for outstanding applicants.",
+    "eventsDetails": "The Annual Arts Festival showcases student performances, art exhibitions, and workshops.",
+    "researchWorks": [
+      "Analyzing post-modern literature trends",
+      "Digital communication patterns in youth culture"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Soccer", "Beach Volleyball"],
+      "indoor": ["Gymnastics", "Chess"]
+    }
+  },
+  {
+    "img":"https://i.ibb.co.com/QF02Yxp/img3.jpg",
+    "collegeName": "Summit Business School",
+    "admissionDate": "2024-09-10",
+    "ratings": 4,
+    "noOfResearch": 85,
+    "event": "Global Business Symposium",
+    "researchHistory": [
+      {
+        "year": 2020,
+        "topic": "Market Trends in Emerging Economies",
+        "outcome": "Published in Business Insights Journal"
+      },
+      {
+        "year": 2023,
+        "topic": "Fintech and Financial Inclusion",
+        "outcome": "Recognized by the Economic Development Council"
+      }
+    ],
+    "sportsFacilities": ["Cricket", "Rugby", "Fitness Center"],
+    "admissionProcess": "Submit a statement of purpose, academic records, and letters of recommendation. Group discussions and personal interviews are conducted for shortlisted candidates.",
+    "eventsDetails": "The Global Business Symposium features expert panels, networking sessions, and workshops on entrepreneurship.",
+    "researchWorks": [
+      "Strategies for sustainable business growth",
+      "Blockchain's impact on finance"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Cricket", "Rugby"],
+      "indoor": ["Table Tennis", "Yoga"]
+    }
+  },
+  {
+    "img":"https://i.ibb.co.com/ScshjH3/img4.jpg",
+    "collegeName": "Lakeside University of Medical Sciences",
+    "admissionDate": "2024-07-20",
+    "ratings": 5,
+    "noOfResearch": 150,
+    "event": "Medical Innovations Conference",
+    "researchHistory": [
+      {
+        "year": 2022,
+        "topic": "Advancements in Cardiac Surgery",
+        "outcome": "Published in the Journal of Medical Innovations"
+      },
+      {
+        "year": 2024,
+        "topic": "Neuroplasticity and Rehabilitation",
+        "outcome": "Presented at the Global Health Summit"
+      }
+    ],
+    "sportsFacilities": ["Swimming", "Martial Arts", "Basketball"],
+    "admissionProcess": "Applicants must pass an entrance exam, attend a counseling session, and complete prerequisite science courses. Interviews are held for final selection.",
+    "eventsDetails": "The Medical Innovations Conference includes panel discussions and presentations by leading health experts.",
+    "researchWorks": [
+      "Stem cell therapy advancements",
+      "AI in diagnostic imaging"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Athletics", "Basketball"],
+      "indoor": ["Martial Arts", "Pilates"]
+    }
+  },
+  {
+    "img":"https://i.ibb.co.com/7Jv5SxH/img5.jpg",
+    "collegeName": "Sunrise School of Engineering",
+    "admissionDate": "2024-05-30",
+    "ratings": 5,
+    "noOfResearch": 95,
+    "event": "Engineering Expo",
+    "researchHistory": [
+      {
+        "year": 2021,
+        "topic": "Sustainable Building Materials",
+        "outcome": "Awarded Best Green Research at EcoTech Fair"
+      },
+      {
+        "year": 2023,
+        "topic": "Smart Transportation Systems",
+        "outcome": "Published in Engineering Today"
+      }
+    ],
+    "sportsFacilities": ["Track and Field", "Soccer", "Climbing Wall"],
+    "admissionProcess": "Candidates must submit academic records, pass an engineering entrance test, and attend a technical interview.",
+    "eventsDetails": "Engineering Expo features project demonstrations, tech challenges, and seminars on the latest engineering trends.",
+    "researchWorks": [
+      "Innovations in bridge construction",
+      "Automated traffic management solutions"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Soccer", "Track"],
+      "indoor": ["Rock Climbing", "Weightlifting"]
+    }
+  },
+  {
+    "img":"https://i.ibb.co.com/z6VLvVm/img6.jpg",
+    "collegeName": "Mountain Crest College of Humanities",
+    "admissionDate": "2024-04-10",
+    "ratings": 5,
+    "noOfResearch": 60,
+    "event": "Literary and Cultural Symposium",
+    "researchHistory": [
+      {
+        "year": 2022,
+        "topic": "Influence of Mythology on Modern Literature",
+        "outcome": "Published in Literary Horizons Journal"
+      },
+      {
+        "year": 2023,
+        "topic": "Cultural Dynamics and Language Preservation",
+        "outcome": "Presented at Global Linguistics Conference"
+      }
+    ],
+    "sportsFacilities": ["Basketball", "Yoga", "Table Tennis"],
+    "admissionProcess": "Prospective students must submit a writing sample or essay, along with academic records and recommendations. Interviews are conducted for final selection.",
+    "eventsDetails": "The Literary and Cultural Symposium includes readings, performances, and panel discussions.",
+    "researchWorks": [
+      "Preservation of endangered languages",
+      "Cultural impacts of globalization"
+    ],
+    "sportsCategories": {
+      "outdoor": ["Basketball"],
+      "indoor": ["Yoga", "Table Tennis"]
+    }
+  }
+]
