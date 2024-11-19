@@ -6,11 +6,11 @@ const ShowCollege = () => {
 
   // load home college data
   useEffect(() => {
-    fetch("http://localhost:5000/college")
+    fetch("http://localhost:5000/homedata")
       .then((res) => res.json())
       .then((data) => {
         setCollege(data);
-      });
+      })
   }, []);
 
   // searching
@@ -20,7 +20,7 @@ const ShowCollege = () => {
 
   // get college for searching
   const getCollege = async () => {
-    let result = await fetch("http://localhost:5000/college");
+    let result = await fetch("http://localhost:5000/homedata");
     result = await result.json();
     setCollege(result);
   };
@@ -29,8 +29,8 @@ const ShowCollege = () => {
     let key = event.target.value;
     if (key) {
       let result = await fetch(
-        `http://localhost:5000/college/search/${key}`
-      );
+        `http://localhost:5000/homedata/search/${key}`
+      )
       result = await result.json();
       if (result) {
         setCollege(result);
@@ -53,7 +53,7 @@ const ShowCollege = () => {
       </div>
       
       {/* show college */}
-      <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 my-10'>
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 my-10 px-4'>
         {
             college.length > 0 ?
             college.map( (clgData) => <CollegeInfo clgData={clgData} key={clgData._id} ></CollegeInfo> )
