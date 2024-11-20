@@ -13,7 +13,7 @@ const SingleCollege = () => {
     }, [] )
 
     return (
-        <div className='container mx-auto mt-5 px-2 '>
+        <div className='container mx-auto mt-5 px-2 ' >
             {/* 1 */}
             <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 w-full shadow-2xl p-3 gap-4">
                 <figure><img className='w-100 ' src={details.img} alt="college" /></figure>

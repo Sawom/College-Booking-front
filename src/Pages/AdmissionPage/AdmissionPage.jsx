@@ -1,9 +1,10 @@
 import React from 'react';
+import CollegeList from './AdmissionPageComponent/CollegeList';
 
 const AdmissionPage = () => {
     return (
-        <div>
-            admission
+        <div >
+            <CollegeList></CollegeList>
         </div>
     );
 };

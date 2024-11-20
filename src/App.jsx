@@ -9,6 +9,7 @@ import CollegePage from "./Pages/CollegePage/CollegePage";
 import SingleCollege from "./Pages/CollegePage/SingleCollege";
 import AdmissionPage from "./Pages/AdmissionPage/AdmissionPage";
 import NotFound from "./Pages/NotFound/NotFound";
+import AdmissionFrom from "./Pages/AdmissionPage/AdmissionPageComponent/AdmissionFrom";
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
             <Route path="singlecollege/:id"  element={ <SingleCollege></SingleCollege> } ></Route>
             {/* admission */}
             <Route path="/admission" element={ <AdmissionPage></AdmissionPage> } ></Route>
+            {/* admission form */}
+            <Route path="admissionform/:id" element={ <AdmissionFrom></AdmissionFrom> } ></Route>
             {/* not found */}
             <Route path='*' element={ <NotFound></NotFound> } ></Route>
           </Routes>
