@@ -20,13 +20,30 @@ const AdmissionFrom = () => {
         </figure>
         <div className=" text-left mt-10">
           <h2 className="card-title font-bold" style={{ color: "#212E52" }}>
-            {" "}
-            {details.collegeName}{" "}
+            
+            {details.collegeName}
           </h2>
           <br />
           <Rating style={{ maxWidth: 100 }} value={details.ratings} readOnly />
           <div className="mt-5">
             <form action="">
+               {/* college name */}
+                <div className="form-control w-full mb-6">
+                    <label className="label">
+                    <span className="label-text font-semibold">
+                        College Name*
+                    </span>
+                    </label>
+                    <input
+                    type="text"
+                    readOnly
+                    defaultValue={details.collegeName}
+                    placeholder="College Name"
+                    name="name"
+                    className="input input-info input-bordered w-full "
+                    />
+                </div>
+
               {/* name */}
               <div className="form-control w-full mb-6">
                 <label className="label">
@@ -55,7 +72,7 @@ const AdmissionFrom = () => {
                   type="email"
                   readOnly
                   defaultValue={""}
-                  placeholder="Your Name"
+                  placeholder="Your email"
                   name="name"
                   className="input input-info input-bordered w-full "
                 />
@@ -70,7 +87,7 @@ const AdmissionFrom = () => {
                   type="text"
                   readOnly
                   defaultValue={""}
-                  placeholder="Your Name"
+                  placeholder="Your subject"
                   name="name"
                   className="input input-info input-bordered w-full "
                 />
@@ -87,7 +104,7 @@ const AdmissionFrom = () => {
                   type="text"
                   readOnly
                   defaultValue={""}
-                  placeholder="Your Name"
+                  placeholder="Your phone number"
                   name="name"
                   className="input input-info input-bordered w-full "
                 />
@@ -101,7 +118,7 @@ const AdmissionFrom = () => {
                 <input
                   type="text"
                   defaultValue={""}
-                  placeholder="Your Name"
+                  placeholder="Your address"
                   name="name"
                   className="input input-info input-bordered w-full "
                 />
