@@ -7,6 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import initializeFirebase from "../Firebase/firebase.init";
 
@@ -51,6 +52,7 @@ const useFirebase = () => {
             });
           });
         setError("");
+        
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -79,7 +81,7 @@ const useFirebase = () => {
           },
           body: JSON.stringify(saveUser),
         })
-        .then((res) => res.json())
+          .then((res) => res.json())
           .then(() => {
             Swal.fire({
               title: "User Login Successful!",

@@ -96,13 +96,13 @@ const Login = () => {
   // google login
   const handleGoogleSignIn = () => {
     signInWithGoogle();
-    navigate(from, { replace: true });
+    navigate(from, {replace: true});
   };
 
   // github login
   const handleGithubSignIn = () =>{
     githubSignIn();
-    navigate(from, { replace: true });
+    navigate(from, {replace: true});
   }
 
   return (
