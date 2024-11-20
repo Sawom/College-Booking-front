@@ -62,7 +62,7 @@ const Header = () => {
                 <Link to="/admission">Admission</Link>
               </li>
               <li>
-                <Link to="/college">College</Link>
+                <Link to="/mycollege">My College</Link>
               </li>
             </ul>
           </div>
@@ -82,7 +82,7 @@ const Header = () => {
               <Link to="/admission">Admission</Link>
             </li>
             <li>
-              <Link to="/college">College</Link>
+              <Link to="/mycollege">My College</Link>
             </li>
           </ul>
         </div>

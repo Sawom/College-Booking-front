@@ -128,6 +128,7 @@ const useFirebase = () => {
   return {
     user,
     loading,
+    setLoading,
     signInWithGoogle,
     logoutUser,
     githubSignIn,

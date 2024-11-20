@@ -13,6 +13,7 @@ import AdmissionFrom from "./Pages/AdmissionPage/AdmissionPageComponent/Admissio
 import Register from "./Authentication/Register/Register";
 import Login from "./Authentication/Login/Login";
 import PrivateRoute from "./Authentication/PrivateRoute/PrivateRoute";
+import MyCollege from "./Pages/MyCollegePage/MyCollege";
 
 function App() {
 
@@ -42,6 +43,11 @@ function App() {
             <Route path="admissionform/:id" element={ 
               <PrivateRoute>
                 <AdmissionFrom></AdmissionFrom>
+              </PrivateRoute> } ></Route>
+            {/* my college */}
+            <Route path="/mycollege" element={ 
+              <PrivateRoute>
+                <MyCollege></MyCollege>
               </PrivateRoute> } ></Route>
             {/* register */}
             <Route path='/register' element={ <Register></Register> } ></Route>
