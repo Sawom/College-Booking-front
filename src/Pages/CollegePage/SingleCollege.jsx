@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React , { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Rating } from "@smastrom/react-rating";
 
-const CollegeDetails = () => {
+const SingleCollege = () => {
     const {id} = useParams();
     const[details, setDetails] = useState({}); 
     
     useEffect( ()=>{
-        fetch(`http://localhost:5000/homedata/${id}`)
+        fetch(`http://localhost:5000/college/${id}`)
         .then(data => data.json() )
         .then(data => setDetails(data) )
     }, [] )
@@ -113,4 +113,4 @@ const CollegeDetails = () => {
     );
 };
 
-export default CollegeDetails;
+export default SingleCollege;

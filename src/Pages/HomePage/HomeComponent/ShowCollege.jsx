@@ -4,8 +4,6 @@ import CollegeInfo from './CollegeInfo';
 const ShowCollege = () => {
   const [college, setCollege] = useState([]);
 
-  
-
   // load home college data
   useEffect(() => {
     fetch("http://localhost:5000/homedata")

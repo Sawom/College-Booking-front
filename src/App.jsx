@@ -5,6 +5,8 @@ import Footer from "./Footer/Footer";
 import Homepage from "./Pages/Homepage/Homepage";
 import '@smastrom/react-rating/style.css'
 import CollegeDetails from "./Pages/HomePage/HomeComponent/CollegeDetails";
+import CollegePage from "./Pages/CollegePage/CollegePage";
+import SingleCollege from "./Pages/CollegePage/SingleCollege";
 
 function App() {
 
@@ -18,6 +20,11 @@ function App() {
             <Route path="/" element={ <Homepage></Homepage>}  ></Route>
             {/* homedata college details*/}
             <Route path="collegeinfo/:id" element={ <CollegeDetails></CollegeDetails> } ></Route>
+            {/* college page */}
+            <Route path="/college" element={ <CollegePage></CollegePage> } ></Route>
+            {/* single college data */}
+            <Route path="singlecollege/:id"  element={ <SingleCollege></SingleCollege> } ></Route>
+
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
