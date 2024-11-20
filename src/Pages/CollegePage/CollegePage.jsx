@@ -14,9 +14,9 @@ const CollegePage = () => {
     }, []);
 
     return (
-        <div>
+        <div className='container mx-auto'>
             {/* show college */}
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 my-10 px-4'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 my-10 px-4'>
                 {
                     college.length > 0 ?
                     college.map( (clgData) => <CollegeCard clgData={clgData} key={clgData._id} ></CollegeCard> )
