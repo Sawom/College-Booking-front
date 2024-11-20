@@ -1,8 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../Authentication/useAuth/useAuth";
 import logo from "../images/logo.svg";
 
 const Header = () => {
+  const { user, logoutUser } = useAuth();
+
+  // logout function
+  const logoutFunction = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be signed out.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Signed Out!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logoutUser();
+        Swal.fire("Signed out!", "You are signed out.", "success");
+      }
+    });
+  };
+
   return (
     <div className=" bg-base-100 shadow-xl">
       <div className="navbar container mx-auto">
@@ -67,7 +89,17 @@ const Header = () => {
 
         {/* login/logout button */}
         <div className="navbar-end">
-          <Link className="btn">Login</Link>
+          {user?.email ? (
+            <button
+              onClick={logoutFunction}
+              className="btn btn-sm btn-ghost mx-2 ">
+              <span className="font-bold">Logout</span>
+            </button>
+          ) : (
+            <Link to="/login" className="btn font-bold btn-ghost">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

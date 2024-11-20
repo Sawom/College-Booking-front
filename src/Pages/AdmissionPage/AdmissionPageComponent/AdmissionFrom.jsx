@@ -127,7 +127,7 @@ const AdmissionFrom = () => {
               {/* dob */}
               <div className="form-control w-full mb-6">
                 <label className="label">
-                  <span className="label-text font-semibold">Address*</span>
+                  <span className="label-text font-semibold">Date of birth*</span>
                 </label>
                 <input
                   type="date"
@@ -141,7 +141,7 @@ const AdmissionFrom = () => {
               {/* pics */}
               <div className="form-control w-full mb-6">
                 <label className="label">
-                  <span className="label-text font-semibold">Address*</span>
+                  <span className="label-text font-semibold">Your Picture*</span>
                 </label>
                 <input
                   type="file"
