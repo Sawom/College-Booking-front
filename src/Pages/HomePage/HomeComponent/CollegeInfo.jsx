@@ -1,7 +1,10 @@
 import React from "react";
+import { Rating } from "@smastrom/react-rating";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CollegeInfo = ({ clgData }) => {
   const {
+    _id,
     img,
     collegeName,
     ratings,
@@ -11,23 +14,31 @@ const CollegeInfo = ({ clgData }) => {
     sportsFacilities,
   } = clgData;
 
+  let navigate = useNavigate();
+  const location = useLocation(); 
+  // dynamic route url
+  const url = `/collegeinfo/${_id}` ;
+  const handleView = ()=>{
+    navigate(url);
+  }
+
   return (
     <div>
       <div className="card card-compact w-full h-full bg-base-100 shadow-2xl px-2">
         <figure>
           <img className="w-full" src={img} alt="college" />
         </figure>
-        {/* <p className='absolute right-0 bg-black text-white mr-4 mt-4 px-4 ' > {price} BDT </p> */}
+       
         <div className="card-body text-left ">
           <h2 className="card-title font-bold" style={{ color: "#212E52" }}>
-            {" "}
-            {collegeName}{" "}
+            {collegeName}
           </h2>
-          <p> Ratings: {ratings} </p>
-          <p> Total research: {noOfResearch} </p>
-          <p>Event: {event} </p>
+          <p> <strong>Ratings:</strong>  </p>
+          <Rating style={{ maxWidth: 100 }} value={ratings} readOnly  />
+          <p> <strong>Total research:</strong>   {noOfResearch} </p>
+          <p> <strong>Event:</strong>  {event} </p>
           <p>
-            Research History:
+            <strong>Research History:</strong> 
             <ul>
               {clgData.researchHistory.map((research, i) => (
                 <li key={i}>
@@ -46,6 +57,12 @@ const CollegeInfo = ({ clgData }) => {
               ))}
             </ul>
           </p>
+
+          <button onClick={handleView}  style={{backgroundColor: '#212E52'}} 
+            className="btn px-5 mt-1 text-white btn-outline btn-active btn-sm 
+            md:btn-md lg:btn-md "> <span className='flex gap-1'> 
+             View details </span> </button>
+
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import CollegeInfo from './CollegeInfo';
 const ShowCollege = () => {
   const [college, setCollege] = useState([]);
 
+  
+
   // load home college data
   useEffect(() => {
     fetch("http://localhost:5000/homedata")
@@ -29,7 +31,7 @@ const ShowCollege = () => {
     let key = event.target.value;
     if (key) {
       let result = await fetch(
-        `http://localhost:5000/homedata/search/${key}`
+        `http://localhost:5000/search/${key}`
       )
       result = await result.json();
       if (result) {
