@@ -4,7 +4,7 @@ import logo from "../images/logo.svg";
 
 const Header = () => {
   return (
-    <div className=" bg-base-100 ">
+    <div className=" bg-base-100 shadow-xl">
       <div className="navbar container mx-auto">
         {/* start */}
         <div className="navbar-start">
