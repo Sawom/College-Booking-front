@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   // google sign in
-  const { user, signInWithGoogle } = useAuth();
+  const { user, signInWithGoogle, githubSignIn } = useAuth();
   const auth = getAuth();
 
   const navigate = useNavigate();
@@ -99,6 +99,12 @@ const Login = () => {
     navigate(from, { replace: true });
   };
 
+  // github login
+  const handleGithubSignIn = () =>{
+    githubSignIn();
+    navigate(from, { replace: true });
+  }
+
   return (
     <div>
       <div className="hero container mt-5 mx-auto bg-base-100 min-h-screen ">
@@ -163,10 +169,16 @@ const Login = () => {
               <button
                 onClick={handleGoogleSignIn}
                 style={{ backgroundColor: "#212E52" }}
-                className="btn px-5 mt-5 text-white btn-outline btn-active btn-sm md:btn-md lg:btn-md "
-              >
-                <span className="flex gap-2"> Sign in With Google </span>
+                className="btn px-5 mt-5 text-white btn-outline btn-active btn-sm md:btn-md lg:btn-md ">
+              <span className="flex gap-2"> Sign in With Google </span>
               </button>
+              {/* github */}
+              {/* github sign in */}
+                <button
+                onClick={handleGithubSignIn}
+                style={{ backgroundColor: "#212E52" }}
+                className="btn px-5 mt-5 text-white btn-outline btn-active btn-sm md:btn-md lg:btn-md "
+              >Sign in With Github</button>
               {/* reset password */}
               <p>
                 Forgot password?

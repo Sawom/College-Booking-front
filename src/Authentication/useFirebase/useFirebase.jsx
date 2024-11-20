@@ -1,4 +1,5 @@
 import {
+  GithubAuthProvider,
   GoogleAuthProvider,
   getAuth,
   onAuthStateChanged,
@@ -21,7 +22,6 @@ const useFirebase = () => {
   // google login
   const signInWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
-    const auth = getAuth();
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -60,6 +60,47 @@ const useFirebase = () => {
       });
   };
 
+  // github sign in
+  const githubSignIn = () => {
+    const githubprovider = new GithubAuthProvider();
+    signInWithPopup(auth, githubprovider)
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const loggedInUser = result.user;
+        const saveUser = {
+          name: loggedInUser.displayName,
+          email: loggedInUser.email,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+        .then((res) => res.json())
+          .then(() => {
+            Swal.fire({
+              title: "User Login Successful!",
+              showClass: {
+                popup: "animate__animated animate__fadeInDown",
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+              },
+            });
+          });
+        setError("");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GithubAuthProvider.credentialFromError(error);
+      });
+  };
+
   // observer if user signin or not
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -87,6 +128,7 @@ const useFirebase = () => {
     loading,
     signInWithGoogle,
     logoutUser,
+    githubSignIn,
   };
 };
 
