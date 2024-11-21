@@ -1,9 +1,9 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import useAuth from "../../Authentication/useAuth/useAuth";
-import axios from "axios";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../Authentication/useAuth/useAuth";
 
 const MyCollege = () => {
   const { user, loading, setLoading } = useAuth();
@@ -15,7 +15,9 @@ const MyCollege = () => {
   // load home college data
   useEffect(() => {
     if (user && user?.email) {
-      fetch(`http://localhost:5000/admission?email=${user.email}`)
+      fetch(
+        `https://college-booking-back.onrender.com/admission?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setAdmissionData(data);
@@ -27,14 +29,12 @@ const MyCollege = () => {
     }
   }, [user]);
 
-   // add review
+  // add review
   const onSubmit = (data) => {
     const formData = new FormData();
     const { collegeName, name, review, rating } = data;
-    axios.post(
-        "http://localhost:5000/reviews",
-        data
-      )
+    axios
+      .post("https://college-booking-back.onrender.com/reviews", data)
       .then((data) => {
         if (data.data.insertedId) {
           reset();
@@ -52,7 +52,10 @@ const MyCollege = () => {
   return (
     <div className="mt-10">
       <div className="container mx-auto ">
-        <p className="font-bold text-center text-2xl mb-5"> Admission Profile </p>
+        <p className="font-bold text-center text-2xl mb-5">
+          {" "}
+          Admission Profile{" "}
+        </p>
 
         {admissionData.map((data) => (
           <div className="grid lg:grid-cols-2 mb-10 md:grid-cols-2 grid-cols-1 w-full shadow-xl p-3 gap-4">
@@ -68,9 +71,11 @@ const MyCollege = () => {
             </div>
             {/* 2 */}
             <div>
-                <Link to={`/mycollege/update/${data._id}`} >
-                    <p className="text-primary"><strong>Candidate Name:</strong> {data.name}</p>
-                </Link>
+              <Link to={`/mycollege/update/${data._id}`}>
+                <p className="text-primary">
+                  <strong>Candidate Name:</strong> {data.name}
+                </p>
+              </Link>
               <p>
                 <strong>College Name:</strong> {data.collegeName}
               </p>
@@ -98,7 +103,7 @@ const MyCollege = () => {
           <div className="card w-full max-w-lg shrink-0 p-5 shadow-xl">
             <h2 className=" text-center font-bold text-2xl"> Your review </h2>
             {/* form */}
-            <form className="card-body"  onSubmit={handleSubmit(onSubmit)} >
+            <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               {/* name */}
               <div className="form-control">
                 <label className="label">
@@ -143,60 +148,60 @@ const MyCollege = () => {
               </div>
               {/* ratings */}
               <div className="form-control rating mb-5">
-              <label className="label">
-                <span className="label-text">Ratings:</span>
-              </label>
-              {/* Radio buttons for 5-star rating */}
-              <div className="flex">
-                <input
-                  type="radio"
-                  name="rating"
-                  value="1"
-                  className="mask mask-star-2 bg-green-500"
-                  {...register("rating", { required: true })}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="2"
-                  className="mask mask-star-2 bg-green-500"
-                  {...register("rating", { required: true })}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="3"
-                  className="mask mask-star-2 bg-green-500"
-                  {...register("rating", { required: true })}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="4"
-                  className="mask mask-star-2 bg-green-500"
-                  {...register("rating", { required: true })}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="5"
-                  className="mask mask-star-2 bg-green-500"
-                  {...register("rating", { required: true })}
-                />
+                <label className="label">
+                  <span className="label-text">Ratings:</span>
+                </label>
+                {/* Radio buttons for 5-star rating */}
+                <div className="flex">
+                  <input
+                    type="radio"
+                    name="rating"
+                    value="1"
+                    className="mask mask-star-2 bg-green-500"
+                    {...register("rating", { required: true })}
+                  />
+                  <input
+                    type="radio"
+                    name="rating"
+                    value="2"
+                    className="mask mask-star-2 bg-green-500"
+                    {...register("rating", { required: true })}
+                  />
+                  <input
+                    type="radio"
+                    name="rating"
+                    value="3"
+                    className="mask mask-star-2 bg-green-500"
+                    {...register("rating", { required: true })}
+                  />
+                  <input
+                    type="radio"
+                    name="rating"
+                    value="4"
+                    className="mask mask-star-2 bg-green-500"
+                    {...register("rating", { required: true })}
+                  />
+                  <input
+                    type="radio"
+                    name="rating"
+                    value="5"
+                    className="mask mask-star-2 bg-green-500"
+                    {...register("rating", { required: true })}
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* button */}
-            <button
+              {/* button */}
+              <button
                 className="btn "
                 style={{
                   backgroundColor: "#016A4E",
                   color: "white",
                   fontStyle: "bold",
-                }}>
+                }}
+              >
                 Submit
               </button>
-
             </form>
           </div>
         </div>

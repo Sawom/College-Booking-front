@@ -5,21 +5,21 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
-    const {
+  const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-    const [update, setUpdate] = useState({});
-    const {id} = useParams();
+  const [update, setUpdate] = useState({});
+  const { id } = useParams();
 
-    // single data load
-    useEffect(() => {
+  // single data load
+  useEffect(() => {
     const fetchReview = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/admission/${id}`
+          `https://college-booking-back.onrender.com/admission/${id}`
         );
         setUpdate(response.data);
         // Populate form with fetched data
@@ -40,7 +40,7 @@ const UpdateProfile = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/admission/${id}`,
+        `https://college-booking-back.onrender.com/admission/${id}`,
         data
       );
 
@@ -67,7 +67,7 @@ const UpdateProfile = () => {
     } catch (error) {
       console.error("Error updating!", error);
     }
-  };  
+  };
 
   return (
     <div className="mt-10">
@@ -75,7 +75,7 @@ const UpdateProfile = () => {
       <div className="container mx-auto  flex justify-center items-center">
         <div className="card w-full max-w-lg shrink-0 p-5 shadow-xl  ">
           {/* form */}
-          <form className="card-body" onSubmit={handleSubmit(onSubmit)} >
+          <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             {/* name */}
             <div className="form-control">
               <label className="label">
@@ -134,7 +134,6 @@ const UpdateProfile = () => {
                 Submit
               </button>
             </div>
-
           </form>
         </div>
       </div>

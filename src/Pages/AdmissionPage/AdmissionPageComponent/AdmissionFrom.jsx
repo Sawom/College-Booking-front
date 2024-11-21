@@ -16,7 +16,7 @@ const AdmissionFrom = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=8a5a04f93faaf1072c6596fcf564df79`;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/college/${id}`)
+    fetch(`https://college-booking-back.onrender.com/college/${id}`)
       .then((data) => data.json())
       .then((data) => setDetails(data));
   }, []);
@@ -34,20 +34,30 @@ const AdmissionFrom = () => {
       .then((imgResponse) => {
         const imgUrl = imgResponse.data.display_url;
         const { collegeName, name, email, subject, phone, address, dob } = data;
-        const newData = {collegeName, name, email, subject, phone, address, dob, img:imgUrl }
-        axios.post("http://localhost:5000/admission", newData)
-        .then((data) => {
-          if (data.data.insertedId) {
-            reset();
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Form submitted successfully",
-              showConfirmButton: false,
-              timer: 2000,
-            });
-          }
-        });
+        const newData = {
+          collegeName,
+          name,
+          email,
+          subject,
+          phone,
+          address,
+          dob,
+          img: imgUrl,
+        };
+        axios
+          .post("https://college-booking-back.onrender.com/admission", newData)
+          .then((data) => {
+            if (data.data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Form submitted successfully",
+                showConfirmButton: false,
+                timer: 2000,
+              });
+            }
+          });
       });
   };
 

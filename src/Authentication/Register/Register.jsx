@@ -61,7 +61,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         const saveUser = { name: name, email: email };
-        fetch("http://localhost:5000/users", {
+        fetch("https://college-booking-back.onrender.com/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -171,9 +171,7 @@ const Register = () => {
                 />
                 <label className="label">
                   <p>
-                    <small>
-                      *Password Must be at least 6 characters long
-                    </small>
+                    <small>*Password Must be at least 6 characters long</small>
                   </p>
                 </label>
               </div>

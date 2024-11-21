@@ -6,7 +6,7 @@ const ShowCollege = () => {
 
   // load home college data
   useEffect(() => {
-    fetch("http://localhost:5000/homedata")
+    fetch("https://college-booking-back.onrender.com/homedata")
       .then((res) => res.json())
       .then((data) => {
         setCollege(data);
@@ -20,7 +20,7 @@ const ShowCollege = () => {
 
   // get college for searching
   const getCollege = async () => {
-    let result = await fetch("http://localhost:5000/homedata");
+    let result = await fetch("https://college-booking-back.onrender.com/homedata");
     result = await result.json();
     setCollege(result);
   };
@@ -29,7 +29,7 @@ const ShowCollege = () => {
     let key = event.target.value;
     if (key) {
       let result = await fetch(
-        `http://localhost:5000/search/${key}`
+        `https://college-booking-back.onrender.com/search/${key}`
       )
       result = await result.json();
       if (result) {

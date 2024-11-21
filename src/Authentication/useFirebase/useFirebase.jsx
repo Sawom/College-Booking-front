@@ -7,7 +7,6 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import initializeFirebase from "../Firebase/firebase.init";
 
@@ -32,7 +31,7 @@ const useFirebase = () => {
           name: loggedInUser.displayName,
           email: loggedInUser.email,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://college-booking-back.onrender.com/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -52,7 +51,6 @@ const useFirebase = () => {
             });
           });
         setError("");
-        
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -74,7 +72,7 @@ const useFirebase = () => {
           name: loggedInUser.displayName,
           email: loggedInUser.email,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://college-booking-back.onrender.com/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
