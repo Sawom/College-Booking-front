@@ -52,7 +52,7 @@ const MyCollege = () => {
   return (
     <div className="mt-10">
       <div className="container mx-auto ">
-        <p className="font-bold text-center text-2xl"> Admission Profile </p>
+        <p className="font-bold text-center text-2xl mb-5"> Admission Profile </p>
 
         {admissionData.map((data) => (
           <div className="grid lg:grid-cols-2 mb-10 md:grid-cols-2 grid-cols-1 w-full shadow-xl p-3 gap-4">
