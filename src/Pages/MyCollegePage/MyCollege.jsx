@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Authentication/useAuth/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCollege = () => {
   const { user, loading, setLoading } = useAuth();
@@ -53,7 +54,7 @@ const MyCollege = () => {
       <div className="container mx-auto ">
         <p className="font-bold text-center text-2xl"> Admission Profile </p>
 
-        {admissionData.map((data, index) => (
+        {admissionData.map((data) => (
           <div className="grid lg:grid-cols-2 mb-10 md:grid-cols-2 grid-cols-1 w-full shadow-xl p-3 gap-4">
             {/* 1 */}
             <div>
@@ -67,11 +68,11 @@ const MyCollege = () => {
             </div>
             {/* 2 */}
             <div>
+                <Link to={`/mycollege/update/${data._id}`} >
+                    <p className="text-primary"><strong>Candidate Name:</strong> {data.name}</p>
+                </Link>
               <p>
                 <strong>College Name:</strong> {data.collegeName}
-              </p>
-              <p>
-                <strong>Candidate Name:</strong> {data.name}
               </p>
               <p>
                 <strong>Email:</strong> {data.email}

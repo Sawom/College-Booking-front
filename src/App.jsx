@@ -14,6 +14,7 @@ import Register from "./Authentication/Register/Register";
 import Login from "./Authentication/Login/Login";
 import PrivateRoute from "./Authentication/PrivateRoute/PrivateRoute";
 import MyCollege from "./Pages/MyCollegePage/MyCollege";
+import UpdateProfile from "./Pages/MyCollegePage/UpdateProfile";
 
 function App() {
 
@@ -25,32 +26,45 @@ function App() {
           <Routes>
             {/* homepage */}
             <Route path="/" element={ <Homepage></Homepage>}  ></Route>
+            
             {/* homedata college details: private route */}
             <Route path="collegeinfo/:id" element={ 
               <PrivateRoute>
                 <CollegeDetails></CollegeDetails>
               </PrivateRoute> } ></Route>
+            
             {/* college page */}
             <Route path="/college" element={ <CollegePage></CollegePage> } ></Route>
+            
             {/* single college data: private route */}
             <Route path="singlecollege/:id"  element={ 
               <PrivateRoute>
                 <SingleCollege></SingleCollege>
               </PrivateRoute> } ></Route>
+            
             {/* admission */}
             <Route path="/admission" element={ <AdmissionPage></AdmissionPage> } ></Route>
+            
             {/* admission form: private route */}
             <Route path="admissionform/:id" element={ 
               <PrivateRoute>
                 <AdmissionFrom></AdmissionFrom>
               </PrivateRoute> } ></Route>
+            
             {/* my college */}
             <Route path="/mycollege" element={ 
               <PrivateRoute>
                 <MyCollege></MyCollege>
               </PrivateRoute> } ></Route>
+            
+            {/* update profile */}
+            <Route path="/mycollege/update/:id" element={
+              <UpdateProfile></UpdateProfile>
+            } ></Route>
+            
             {/* register */}
             <Route path='/register' element={ <Register></Register> } ></Route>
+            
             {/* login */}
             <Route path='/login' element={ <Login></Login> } ></Route>
             
